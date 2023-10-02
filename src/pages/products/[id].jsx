@@ -49,7 +49,7 @@ const ProductDetail = () => {
           style={{ fontSize: "14px", fontWeight: "400", color: "#01040D" }}
           className="container"
         >
-          Home {">"} Brands {">"} Product Details
+          Home {">"} Product Details
         </div>
       </div>
       <div className="container">

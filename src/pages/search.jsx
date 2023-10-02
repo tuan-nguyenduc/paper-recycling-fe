@@ -29,7 +29,7 @@ const SearchProduct = () => {
     const [currentCategoriesFilter, setCurrentCategoriesFilter] = useState("");
     const [dataSearch, setDataSearch] = useState({
         page: 0,
-        limit: 4,
+        limit: 8,
         sortBy: "",
         sortDirection: "",
         q: "",

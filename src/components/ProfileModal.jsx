@@ -40,7 +40,7 @@ const ProfileModal = ({ open, setOpen }) => {
       onOk={() => setOpen(false)}
       onCancel={() => setOpen(false)}
       footer={null}
-      width={900}
+      width={800}
     >
       <div
         className="text-center"

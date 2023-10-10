@@ -58,8 +58,8 @@ const ProductDetail = () => {
             <Skeleton />
           ) : (
             <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mt-5">
-              <div className="carousel_product">
-                  <Carousel autoplay>
+              <div className="carousel_product" >
+                  <Carousel autoplay style={{width: "60%", marginLeft: 80}}>
                       {
                           product?.images?.split(',').map((image, index) => {
                               return (

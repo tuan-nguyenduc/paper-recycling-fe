@@ -86,7 +86,7 @@ const SearchProduct = () => {
                         style={{fontSize: "14px", fontWeight: "400", color: "#01040D"}}
                         className="container"
                     >
-                        Home {">"} Categories {">"} Furniture {">"} Chairs
+                        Home {">"} Search {">"} {dataSearch.q}
                     </div>
                 </div>
                 <div className="container">
@@ -265,7 +265,7 @@ const SearchProduct = () => {
                             </div>
                             <div className="tabs mt-4">
                                 <div className="row">
-                                    <div className="Tabs mt-5 d-flex tabs_reponsive">
+                                    <div className="Tabs d-flex tabs_reponsive">
                                         {productFilters.map((item) => {
                                             return (
                                                 <div className="mt-3" key={item.code}>
@@ -300,7 +300,7 @@ const SearchProduct = () => {
                                     <h2>No products match your search...</h2>
                                 ) : (
                                     allProducts.map((product, index) => (
-                                        <div key={product.id} className="col-3 mt-5 position-relative">
+                                        <div key={product.id} className="col-3 mt-4 position-relative">
                                             <ProductCard product={product}/>
                                         </div>
                                     ))

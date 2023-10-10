@@ -48,6 +48,18 @@ const apiServices = {
     cancelOrder: async (id) => {
         const url = `/orders/${id}/cancel`
         return await axiosClient.post(url)
-    }
+    },
+    allUsers: async (params = {}) => {
+        const url = '/users'
+        return await axiosClient.get(url, {params})
+    },
+    allSchools: async (params = {}) => {
+        const url = '/schools';
+        return await axiosClient.get(url, {params});
+    },
+    getClasses: async (params = {}) => {
+        const url = '/classes';
+        return await axiosClient.get(url, {params});
+    },
 }
 export default apiServices;

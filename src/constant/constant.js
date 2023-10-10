@@ -1,5 +1,5 @@
-// export const API_URL = 'https://paper-recycling-be.vinhomes.co.uk/api/v1';
-export const API_URL = "http://localhost:3000/api/v1"
+export const API_URL = 'https://paper-recycling-be.vinhomes.co.uk/api/v1';
+// export const API_URL = "http://localhost:3000/api/v1"
 export const PROFILE_STORAGE_KEY = 'access-token';
 
 export const productFilters = [{

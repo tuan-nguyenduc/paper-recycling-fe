@@ -167,6 +167,7 @@ const Cart = () => {
                                                         style={{
                                                             width: '40%',
                                                         }}
+                                                        size={"small"}
                                                         defaultValue={orderItem.quantity}
                                                         onChange={(value) => handleChangeQuantityItem(value, orderItem)}
                                                     />
@@ -179,7 +180,7 @@ const Cart = () => {
                                                     color: "#01040D",
                                                 }}
                                             >
-                                                {formatPrice(orderItem.product.price * orderItem.quantity)} Paper Point
+                                                {formatPrice(orderItem.product.price * orderItem.quantity)} PP
                                             </div>
                                             <button
                                                 onClick={() => handleDeleteItem(orderItem)}

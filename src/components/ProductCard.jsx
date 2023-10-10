@@ -10,7 +10,7 @@ const ProductCard = ({product}) => {
     console.log(product);
     return (
         <>
-            <div style={{boxShadow: "0px 4px 30px 0px #1B19561A", padding: "25px"}}>
+            <div style={{boxShadow: "0px 4px 30px 0px #1B19561A", padding: "25px", borderRadius: 20, position: "relative"}}>
                 <Link href={`/products/${product.id}`}>
                     <img
                         className="mt-3"
@@ -41,7 +41,7 @@ const ProductCard = ({product}) => {
                         paddingTop: "10px",
                     }}
                 >
-                    {formatPrice(product.price) + " Paper Point"}
+                    {formatPrice(product.price) + " PP"}
                 </div>
                 <div
                     className="boxPlus"

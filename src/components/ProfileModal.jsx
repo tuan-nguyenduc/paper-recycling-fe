@@ -16,7 +16,7 @@ import { GiPayMoney } from "react-icons/gi";
 import { RiMoneyDollarCircleLine } from "react-icons/ri";
 import {TbLogout} from "react-icons/tb";
 import {formatPrice} from "@/utils";
-import {PROFILE_STORAGE_KEY} from "@/constant/constant";
+import {DEFAULT_AVATAR_IMG, PROFILE_STORAGE_KEY} from "@/constant/constant";
 import {useRouter} from "next/router";
 
 const ProfileModal = ({ open, setOpen }) => {
@@ -53,7 +53,7 @@ const ProfileModal = ({ open, setOpen }) => {
           <img className="w-100 mt-3" src="img/BannerModal.png" alt="" />
         </div>
         <div className="profile_avt">
-          <img style={{ margin: " 0 auto", width: 120, height: 120, borderRadius: 30}} src={user?.avatar} alt="" />
+          <img style={{ margin: " 0 auto", width: 120, height: 120, borderRadius: 30}} src={user?.avatar || DEFAULT_AVATAR_IMG} alt="" />
         </div>
         <div
           style={{

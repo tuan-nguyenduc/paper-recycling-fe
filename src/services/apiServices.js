@@ -61,5 +61,9 @@ const apiServices = {
         const url = '/classes';
         return await axiosClient.get(url, {params});
     },
+    getAllReviews: async (params = {}) => {
+        const url = '/reviews';
+        return await axiosClient.get(url, {params});
+    }
 }
 export default apiServices;

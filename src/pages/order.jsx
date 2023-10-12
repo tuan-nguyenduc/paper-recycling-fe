@@ -83,7 +83,13 @@ const Order = () => {
                     </div>
                 </div>
                 <div className="container">
-                    <div className="title_section mb-3">Your Orders</div>
+                    <div
+                        style={{
+                            fontSize: "24px", fontWeight: "700", color: "#01040D",
+                        }}
+                    >
+                        All Orders
+                    </div>
                     <section className="mainOrder size_container_elm">
                         <nav>
                             <ul className="d-flex justify-content-between mb-3">
@@ -185,7 +191,8 @@ const Order = () => {
                                                 return (
                                                     <div className="d-flex align-items-center mb-3"
                                                          key={order.orderDetails?.id}>
-                                                        <img src={orderItem?.product?.images.split(',')[0]} alt={orderItem?.product?.name}
+                                                        <img src={orderItem?.product?.images.split(',')[0]}
+                                                             alt={orderItem?.product?.name}
                                                              width={60} height={60}/>
                                                         <span
                                                             style={{
@@ -221,7 +228,7 @@ const Order = () => {
                                                     color: "#01221D",
                                                 }}
                                             >
-                {formatPrice(order.amount)} Paper Point
+                {formatPrice(order.amount)} PP
               </span>
                                         </div>
                                         {
@@ -252,7 +259,21 @@ const Order = () => {
                                                 >
                                                     Cancelled
                                                 </button>
-                                            </div> : <div></div>
+                                            </div> : <div>
+                                                <button
+                                                    style={{
+                                                        background: "#01040D",
+                                                        color: "#fff",
+                                                        width: "100%",
+                                                        padding: "20px",
+                                                        borderRadius: "15px",
+                                                        marginTop: "30px",
+                                                    }}
+                                                    onClick={() => {}}
+                                                >
+                                                    Review Product
+                                                </button>
+                                            </div>
                                         }
                                     </section>
                                 )

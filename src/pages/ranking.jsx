@@ -97,7 +97,15 @@ const Ranking = () => {
                     </div>
                 </div>
                 <div className="container">
-                    <div className="title_section mb-3" style={{textAlign: "center"}}>Top 10 Recycling Ranking</div>
+                    <div
+                        style={{
+                            fontSize: "24px", fontWeight: "700", color: "#01040D",
+                            textAlign: "center"
+                        }}
+                        className="pb-3"
+                    >
+                        Top 10 Recycling Ranking
+                    </div>
                     <Form
                         form={form}
                         layout='inline'

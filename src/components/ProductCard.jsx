@@ -7,7 +7,6 @@ import apiServices from "@/services/apiServices";
 
 const ProductCard = ({product}) => {
     const router = useRouter();
-    console.log(product);
     return (
         <>
             <div style={{boxShadow: "0px 4px 30px 0px #1B19561A", padding: "25px", borderRadius: 20, position: "relative"}}>

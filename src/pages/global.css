@@ -1,6 +1,6 @@
 @tailwind base;
 @tailwind components;
-@tailwindz utilities;
+@tailwind utilities;
 
 
 body {
@@ -112,7 +112,7 @@ body {
     color: #01040D;
     font-size: 22px;
     font-weight: 700;
-    padding-top: 70px;
+    padding-top: 30px;
 }
 
 .title_elm {
@@ -151,7 +151,7 @@ body {
     justify-content: center;
     cursor: pointer;
     position: absolute;
-    left: 43%;
+    left: 43%
 }
 
 .menu_reponsive {

@@ -13,7 +13,7 @@ const ProductCard = ({product}) => {
                 <Link href={`/products/${product.id}`}>
                     <img
                         className="mt-3"
-                        style={{width: "100%", height: "70%"}}
+                        style={{width: "100%", height: "70%", }}
                         src={product.images.split(',')[0]}
                         alt={product.name}
                     />

@@ -20,9 +20,11 @@ import {formatPrice} from "@/utils";
 import {allOrderStatus} from "@/constant/constant";
 import {Skeleton} from "antd";
 import toast from "react-hot-toast";
+import ReviewProductModal from "@/components/review/ReviewProductModal";
 
 const Order = () => {
     const [orderStatus, setOrderStatus] = useState(allOrderStatus.SHIPPING)
+    const [isOpenReviewProduct, setIsOpenReviewProduct] = useState(false);
     const {data: ordersData = {}, isLoading: isLoadingOrders, refetch: refetchOrders} = useQuery({
         queryKey: ["getAllOrders", orderStatus], queryFn: ({queryKey}) => apiServices.getAllOrders({
             status: queryKey[1]
@@ -81,6 +83,7 @@ const Order = () => {
                     >
                         Home {">"} Order
                     </div>
+
                 </div>
                 <div className="container">
                     <div
@@ -193,7 +196,9 @@ const Order = () => {
                                                          key={order.orderDetails?.id}>
                                                         <img src={orderItem?.product?.images.split(',')[0]}
                                                              alt={orderItem?.product?.name}
-                                                             width={60} height={60}/>
+                                                             width={60} height={60}
+                                                             style={{borderRadius: 10}}
+                                                        />
                                                         <span
                                                             style={{
                                                                 fontSize: "14px",
@@ -282,6 +287,11 @@ const Order = () => {
 
                 </div>
             </div>
+            {/*<ReviewProductModal*/}
+            {/*    isOpen={isOpenReviewProduct}*/}
+            {/*    setIsOpen={setIsOpenReviewProduct}*/}
+            {/*    order={}*/}
+            {/*/>*/}
         </main>
     );
 };

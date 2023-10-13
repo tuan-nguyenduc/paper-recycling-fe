@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import {Circle, Plus, Start2} from "@/components/icon/SvgPage";
 import AppLayout from "@/layouts/AppLayout";
-import {Carousel, Skeleton} from "antd";
+import {Carousel, Rate, Skeleton} from "antd";
 import {useQuery} from "react-query";
 import apiServices from "@/services/apiServices";
 import {useRouter} from "next/router";
@@ -10,6 +10,7 @@ import ProductCard from "@/components/ProductCard";
 import {formatPrice} from "@/utils";
 import moment from "moment";
 import {DEFAULT_AVATAR_IMG} from "@/constant/constant";
+import {CCarousel, CCarouselItem, CImage} from "@coreui/react";
 
 const ProductDetail = () => {
     const router = useRouter();
@@ -50,9 +51,9 @@ const ProductDetail = () => {
     };
 
     const contentStyle = {
-        height: "250px",
+        height: "400px",
         color: "#fff",
-        background: "#364d79",
+        //background: "#364d79",
     };
     return (
         <main>
@@ -71,20 +72,37 @@ const ProductDetail = () => {
                     ) : (
                         <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12 mt-5">
                             <div className="carousel_product">
-                                <Carousel autoplay style={{width: "60%", marginLeft: 80}}>
+                                {/*<Carousel autoplay style={{width: "100%"}}>*/}
+                                {/*    {*/}
+                                {/*        product?.images?.split(',').map((image, index) => {*/}
+                                {/*            return (*/}
+                                {/*                <div key={index}>*/}
+                                {/*                    <div style={contentStyle}>*/}
+                                {/*                        <img style={{width: "100%", height: "100%"}} src={image}*/}
+                                {/*                             alt={product.name}/>*/}
+                                {/*                    </div>*/}
+                                {/*                </div>*/}
+                                {/*            )*/}
+                                {/*        })*/}
+                                {/*    }*/}
+                                {/*</Carousel>*/}
+
+                                <CCarousel controls indicators dark transition="crossfade">
                                     {
-                                        product?.images?.split(',').map((image, index) => {
+                                        product.images.split(',').map((image, index) => {
                                             return (
-                                                <div key={index}>
+                                                <CCarouselItem key={index}>
                                                     <div style={contentStyle}>
-                                                        <img style={{width: "100%", height: "100%"}} src={image}
-                                                             alt={product.name}/>
+                                                        <CImage style={{width: "100%", height: "100%"}} src={image}
+                                                                alt="slide 1"/>
                                                     </div>
-                                                </div>
+                                                </CCarouselItem>
                                             )
                                         })
                                     }
-                                </Carousel>
+
+
+                                </CCarousel>
                             </div>
                         </div>
                     )}
@@ -149,7 +167,7 @@ const ProductDetail = () => {
                                         color: "#fff",
                                         padding: "21px 97px",
                                     }}
-                                    className="mt-4"
+                                    className="mt-5"
                                     onClick={handleClickAddToCart}
                                 >
                                     Add to cart
@@ -233,8 +251,7 @@ const ProductDetail = () => {
                                                 <img
                                                     src={review?.user?.avatar || DEFAULT_AVATAR_IMG}
                                                     alt=""
-                                                    width={100}
-                                                    height={100}
+                                                    width={120}
                                                     style={{borderRadius: 20}}
                                                 />
                                                 <div className="ms-5">
@@ -248,7 +265,7 @@ const ProductDetail = () => {
                                                         {review?.user.name}
                                                     </div>
                                                     <div className="mt-2">
-                                                        <Start2/>
+                                                        <Rate disabled defaultValue={review?.rating} style={{fontSize: 12}}/>
                                                     </div>
                                                     <p
                                                         style={{
@@ -256,6 +273,7 @@ const ProductDetail = () => {
                                                             fontWeight: "400",
                                                             color: "#000521",
                                                         }}
+                                                        className="mt-2"
                                                     >
                                                         {review?.content}
                                                     </p>
@@ -271,7 +289,7 @@ const ProductDetail = () => {
                                                         textAlign: "end",
                                                     }}
                                                 >
-                                                    {moment(review?.createdAt, "YYYY-MM-DD").startOf('days').fromNow()}
+                                                    {moment(review.createdAt, "YYYY-MM-DDTHH:mm:ss.sssZ").fromNow()}
                                                 </p>
                                             </div>
                                         </div>

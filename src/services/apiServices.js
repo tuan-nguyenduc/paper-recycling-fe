@@ -64,6 +64,10 @@ const apiServices = {
     getAllReviews: async (params = {}) => {
         const url = '/reviews';
         return await axiosClient.get(url, {params});
-    }
+    },
+    createReview: async (body) => {
+        const url = '/reviews'
+        return await axiosClient.post(url, body);
+    },
 }
 export default apiServices;

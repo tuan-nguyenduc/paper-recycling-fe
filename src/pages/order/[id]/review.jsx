@@ -4,7 +4,7 @@ import withAuth from "@/hocs/withAuth";
 import AppLayout from "@/layouts/AppLayout";
 import Column from "antd/lib/table/Column";
 import {DEFAULT_AVATAR_IMG} from "@/constant/constant";
-import {Col, Form, Image, Rate} from "antd";
+import {Col, Form, Image, Rate, Select} from "antd";
 import Title from "antd/lib/typography/Title";
 import TextArea from "antd/lib/input/TextArea";
 import {useRouter} from "next/router";
@@ -16,22 +16,44 @@ import toast from "react-hot-toast";
 const Review = () => {
     const [form] = useForm();
     const [isUploadingReview, setIsUploadingReview] = useState(false);
+    const [selectedProduct, setSeletedProduct] = useState(0);
     const router = useRouter();
-    const {id: queryParam} = router.query;
-    const {data: productData = {}, isLoading: isLoadingProduct} = useQuery({
-        queryKey: ["getProductById", queryParam],
-        queryFn: ({queryKey}) => apiServices.getProductById(queryKey[1]),
-    });
-    const {data: product = {}} = productData;
-    console.log("router", router);
+    const {id: orderId} = router.query;
+    // const {data: productData = {}, isLoading: isLoadingProduct} = useQuery({
+    //     queryKey: ["getProductById", queryParam],
+    //     queryFn: ({queryKey}) => apiServices.getProductById(queryKey[1]),
+    // });
+    // const {data: product = {}} = productData;
+    // console.log("router", router);
+    const {data: orderData = {}, isLoading: isLoadingOrders, refetch: refetchOrders} = useQuery({
+        queryKey: ["getAllOrders", orderId], queryFn: ({queryKey}) => apiServices.getAllOrders({
+            id: queryKey[1]
+        })
+    })
+    const {data: {contents: orders = []} = {}} = orderData;
+    const orderDetails = orders[0]?.orderDetails;
+    // console.log(orderDetails)
+
+    let productList = [];
+
+    orderDetails?.map((orderDetail, index) => {
+        productList.push({
+            value: index,
+            label: orderDetail?.product?.name,
+        });
+    })
+
+    // console.log(orderDetails?.at(selectedProduct)?.productId);
+
 
     const uploadReview = async (values) => {
         try {
             setIsUploadingReview(true);
             const reviewData = await apiServices.createReview({
                 ...values,
-                productId: queryParam,
+                productId: orderDetails?.at(selectedProduct)?.productId,
             });
+            await router.push(`/products/${orderDetails?.at(selectedProduct)?.productId}`)
         } catch (err) {
             throw new Error(err.message)
         } finally {
@@ -42,8 +64,8 @@ const Review = () => {
 
     const onUploadReview = async (values) => {
         await toast.promise(uploadReview(values), {
-            success: () => "Uploaded your [id] successfully!",
-            loading: () => "Uploading your [id]...",
+            success: () => "Uploaded your review successfully!",
+            loading: () => "Uploading your review...",
             error: (err) => `${err.message}`
         })
     }
@@ -66,47 +88,67 @@ const Review = () => {
                     >
                         Review Product
                     </div>
-                    <div style={{textAlign: "center"}}>
-                        <Col>
-                            <Image
-                                width={160}
-                                src={product?.images?.split(',')[0]}
-                                alt="test"
-                            />
-                            <Title className='mt-3' level={4}>{product?.name}</Title>
-                            <Form
-                                form={form}
-                                onFinish={(values) => onUploadReview(values)}
-                            >
-                                <Form.Item name='rating'>
-                                    <Rate className='mt-3' defaultValue={0} style={{fontSize: 40,}}/>
-                                </Form.Item>
-                                <Form.Item name='content'>
-                                    <div className='mt-5'>
-                                        <TextArea style={{width: '50%', resize: 'none'}} rows={6}
-                                                  placeholder="Write your review..." maxLength={120} showCount/>
-                                    </div>
-                                </Form.Item>
-                            </Form>
+                    {orders.length === 0
+                        ? <div className='mt-5'>Order Not found...</div>
+                        : <div style={{textAlign: "center"}}>
+                            <Col>
+                                <div className='mt-5 mb-5'>
+                                    <Select
+                                        defaultValue={selectedProduct}
+                                        placeholder="Select product to review"
+                                        style={{
+                                            width: '30%',
+                                        }}
+                                        options={productList}
+                                        onChange={(value) => {
+                                            setSeletedProduct(value);
+                                        }}
+                                    >
 
-                            <button
-                                style={{
-                                    background: "#01040D",
-                                    color: "#fff",
-                                    width: "30%",
-                                    padding: "20px",
-                                    borderRadius: "15px",
-                                    marginTop: "50px",
-                                }}
-                                onClick={() => {
-                                    form.submit()
-                                }}
-                                disabled={isUploadingReview}
-                            >
-                                {isUploadingReview ? "Uploading..." : "Upload Review"}
-                            </button>
-                        </Col>
-                    </div>
+                                    </Select>
+                                </div>
+
+                                <Image
+                                    width={160}
+                                    src={orderDetails?.at(selectedProduct).product?.images?.split(',')[0]}
+                                    alt="test"
+                                />
+                                <Title className='mt-3'
+                                       level={4}>{orderDetails?.at(selectedProduct).product?.name}</Title>
+                                <Form
+                                    form={form}
+                                    onFinish={(values) => onUploadReview(values)}
+                                >
+                                    <Form.Item name='rating'>
+                                        <Rate className='mt-3' defaultValue={0} style={{fontSize: 40,}}/>
+                                    </Form.Item>
+                                    <Form.Item name='content'>
+                                        <div className='mt-5'>
+                                            <TextArea style={{width: '50%', resize: 'none'}} rows={6}
+                                                      placeholder="Write your review..." maxLength={120} showCount/>
+                                        </div>
+                                    </Form.Item>
+                                </Form>
+
+                                <button
+                                    style={{
+                                        background: "#01040D",
+                                        color: "#fff",
+                                        width: "30%",
+                                        padding: "20px",
+                                        borderRadius: "15px",
+                                        marginTop: "50px",
+                                    }}
+                                    onClick={() => {
+                                        form.submit()
+                                    }}
+                                    disabled={isUploadingReview}
+                                >
+                                    {isUploadingReview ? "Uploading..." : "Upload Review"}
+                                </button>
+                            </Col>
+                        </div>
+                    }
 
 
                 </div>
@@ -115,7 +157,7 @@ const Review = () => {
     );
 };
 
-const OrderWithAuth = withAuth(Review);
-OrderWithAuth.getLayout = (page) => (<AppLayout>{page}</AppLayout>)
+const ReviewWithAuth = withAuth(Review);
+ReviewWithAuth.getLayout = (page) => (<AppLayout>{page}</AppLayout>)
 
-export default OrderWithAuth;
+export default ReviewWithAuth;

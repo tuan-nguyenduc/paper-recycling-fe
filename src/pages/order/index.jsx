@@ -21,8 +21,10 @@ import {allOrderStatus} from "@/constant/constant";
 import {Skeleton} from "antd";
 import toast from "react-hot-toast";
 import ReviewProductModal from "@/components/review/ReviewProductModal";
+import {useRouter} from "next/router";
 
 const Order = () => {
+    const router = useRouter();
     const [orderStatus, setOrderStatus] = useState(allOrderStatus.SHIPPING)
     const [isOpenReviewProduct, setIsOpenReviewProduct] = useState(false);
     const {data: ordersData = {}, isLoading: isLoadingOrders, refetch: refetchOrders} = useQuery({
@@ -274,7 +276,9 @@ const Order = () => {
                                                         borderRadius: "15px",
                                                         marginTop: "30px",
                                                     }}
-                                                    onClick={() => {}}
+                                                    onClick={async () => {
+                                                        await router.push(`/order/${order?.id}/review`)
+                                                    }}
                                                 >
                                                     Review Product
                                                 </button>

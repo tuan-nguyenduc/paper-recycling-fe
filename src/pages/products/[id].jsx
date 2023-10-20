@@ -89,7 +89,7 @@ const ProductDetail = () => {
 
                                 <CCarousel controls indicators dark transition="crossfade">
                                     {
-                                        product.images.split(',').map((image, index) => {
+                                        product?.images?.split(',').map((image, index) => {
                                             return (
                                                 <CCarouselItem key={index}>
                                                     <div style={contentStyle}>
@@ -118,7 +118,7 @@ const ProductDetail = () => {
                                         color: "#01040D",
                                     }}
                                 >
-                                    {product.name}
+                                    {product?.name}
                                 </h2>
                                 <button
                                     style={{
@@ -141,7 +141,7 @@ const ProductDetail = () => {
                                     color: "#07BFA5",
                                 }}
                             >
-                                {formatPrice(product.price)} PP
+                                {formatPrice(product?.price)} PP
                             </div>
                             <p
                                 style={{
@@ -150,11 +150,11 @@ const ProductDetail = () => {
                                     color: "#01040D",
                                 }}
                             >
-                                {product.description}
+                                {product?.description}
                             </p>
                             <div className="mt-3 d-flex">
                                 <h4>
-                                    <b>Quantity In Stock:</b> {formatPrice(product.quantity)}
+                                    <b>Quantity In Stock:</b> {formatPrice(product?.quantity)}
                                 </h4>
                             </div>
                             <div>
@@ -233,7 +233,7 @@ const ProductDetail = () => {
                             Reviews
                         </div>
                         <div className="row">
-                            {allReviews.map((review) => {
+                            {allReviews?.map((review) => {
                                 return (
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" key={review?.id}>
                                         <div
@@ -262,7 +262,7 @@ const ProductDetail = () => {
                                                             color: "#01040D",
                                                         }}
                                                     >
-                                                        {review?.user.name}
+                                                        {review?.user?.name}
                                                     </div>
                                                     <div className="mt-2">
                                                         <Rate disabled defaultValue={review?.rating} style={{fontSize: 12}}/>
@@ -289,7 +289,7 @@ const ProductDetail = () => {
                                                         textAlign: "end",
                                                     }}
                                                 >
-                                                    {moment(review.createdAt, "YYYY-MM-DDTHH:mm:ss.sssZ").fromNow()}
+                                                    {moment(review?.createdAt, "YYYY-MM-DDTHH:mm:ss.sssZ").fromNow()}
                                                 </p>
                                             </div>
                                         </div>
@@ -320,8 +320,8 @@ const ProductDetail = () => {
                         {isLoadingProducts ? (
                             <Skeleton/>
                         ) : (
-                            allProducts.map((product) => (
-                                <div key={product.id}
+                            allProducts?.map((product) => (
+                                <div key={product?.id}
                                      className="box_flashSale col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12 mt-5 position-relative">
                                     <ProductCard product={product}/>
                                 </div>

@@ -42,6 +42,14 @@ const Home = () => {
 
   return (
     <div style={{paddingBottom:"50px"}} id="homePage">
+      <div style={{padding: "20px 0px"}} className="breadcrumb">
+        <div
+            style={{fontSize: "14px", fontWeight: "400", color: "#01040D"}}
+            className="container"
+        >
+          Home
+        </div>
+      </div>
       <div className="container">
         <section className="categories">
           <div className="title_section">Categories</div>

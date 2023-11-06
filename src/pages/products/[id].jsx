@@ -11,6 +11,7 @@ import {formatPrice} from "@/utils";
 import moment from "moment";
 import {DEFAULT_AVATAR_IMG} from "@/constant/constant";
 import {CCarousel, CCarouselItem, CImage} from "@coreui/react";
+import ShowMoreText from "react-show-more-text";
 
 const ProductDetail = () => {
     const router = useRouter();
@@ -120,18 +121,18 @@ const ProductDetail = () => {
                                 >
                                     {product?.name}
                                 </h2>
-                                <button
-                                    style={{
-                                        fontSize: "14px",
-                                        fontWeight: "500",
-                                        color: "#01040D",
-                                        borderRadius: "12px",
-                                        border: "1px solid #01040D",
-                                        padding: "5px 28px",
-                                    }}
-                                >
-                                    Try-On
-                                </button>
+                                {/*<button*/}
+                                {/*    style={{*/}
+                                {/*        fontSize: "14px",*/}
+                                {/*        fontWeight: "500",*/}
+                                {/*        color: "#01040D",*/}
+                                {/*        borderRadius: "12px",*/}
+                                {/*        border: "1px solid #01040D",*/}
+                                {/*        padding: "5px 28px",*/}
+                                {/*    }}*/}
+                                {/*>*/}
+                                {/*    Try-On*/}
+                                {/*</button>*/}
                             </div>
                             <div
                                 className="mt-3"
@@ -143,20 +144,32 @@ const ProductDetail = () => {
                             >
                                 {formatPrice(product?.price)} PP
                             </div>
-                            <p
-                                style={{
-                                    fontSize: "16px",
-                                    fontWeight: "400",
-                                    color: "#01040D",
-                                }}
+
+                            <ShowMoreText
+                                /* Default options */
+                                className="postDesc"
+                                lines={3}
+                                more="Show more"
+                                less="Show less"
+                                anchorClass="show-more-less-clickable"
+                                expanded={false}
+                                truncatedEndingComponent={"... "}
                             >
-                                {product?.description}
-                            </p>
-                            <div className="mt-3 d-flex">
-                                <h4>
-                                    <b>Quantity In Stock:</b> {formatPrice(product?.quantity)}
-                                </h4>
-                            </div>
+                                <p
+                                    style={{
+                                        fontSize: "16px",
+                                        fontWeight: "400",
+                                        color: "#01040D",
+                                    }}
+                                >
+                                    {product?.description}
+                                </p>
+                            </ShowMoreText>
+                            {/*<div className="mt-3 d-flex">*/}
+                            {/*    <h4>*/}
+                            {/*        <b>Quantity In Stock:</b> {formatPrice(product?.quantity)}*/}
+                            {/*    </h4>*/}
+                            {/*</div>*/}
                             <div>
                                 <button
                                     style={{
@@ -180,55 +193,54 @@ const ProductDetail = () => {
             <section
                 style={{paddingTop: "50px", background: "#F9FAFB", marginTop: "50px"}}
             >
-                <div className="tabs d-flex container tabs_reponsive">
-                    <div className=" mt-3">
-                        <button
-                            style={{
-                                fontSize: "14px ",
-                                fontWeight: "500",
-                                color: "#01040D",
-                                border: "1px solid #01040D",
-                                padding: "7px 50px",
-                                borderRadius: "12px",
-                            }}
-                        >
-                            Details
-                        </button>
-                    </div>
-                    <div className="ms-4  mt-3">
-                        <button
-                            style={{
-                                fontSize: "14px ",
-                                fontWeight: "500",
-                                color: "#01040D",
-                                border: "1px solid #01040D",
-                                padding: "7px 50px",
-                                borderRadius: "12px",
-                            }}
-                        >
-                            Description
-                        </button>
-                    </div>
-                    <div className="ms-4  mt-3">
-                        <button
-                            style={{
-                                fontSize: "14px ",
-                                fontWeight: "500",
-                                color: "#01040D",
-                                border: "1px solid #01040D",
-                                padding: "7px 50px",
-                                borderRadius: "12px",
-                            }}
-                        >
-                            Reviews
-                        </button>
-                    </div>
-                </div>
+                {/*<div className="tabs d-flex container tabs_reponsive">*/}
+                {/*    /!*<div className=" mt-3">*!/*/}
+                {/*    /!*    <button*!/*/}
+                {/*    /!*        style={{*!/*/}
+                {/*    /!*            fontSize: "14px ",*!/*/}
+                {/*    /!*            fontWeight: "500",*!/*/}
+                {/*    /!*            color: "#01040D",*!/*/}
+                {/*    /!*            border: "1px solid #01040D",*!/*/}
+                {/*    /!*            padding: "7px 50px",*!/*/}
+                {/*    /!*            borderRadius: "12px",*!/*/}
+                {/*    /!*        }}*!/*/}
+                {/*    /!*    >*!/*/}
+                {/*    /!*        Details*!/*/}
+                {/*    /!*    </button>*!/*/}
+                {/*    /!*</div>*!/*/}
+                {/*    /!*<div className="ms-4  mt-3">*!/*/}
+                {/*    /!*    <button*!/*/}
+                {/*    /!*        style={{*!/*/}
+                {/*    /!*            fontSize: "14px ",*!/*/}
+                {/*    /!*            fontWeight: "500",*!/*/}
+                {/*    /!*            color: "#01040D",*!/*/}
+                {/*    /!*            border: "1px solid #01040D",*!/*/}
+                {/*    /!*            padding: "7px 50px",*!/*/}
+                {/*    /!*            borderRadius: "12px",*!/*/}
+                {/*    /!*        }}*!/*/}
+                {/*    /!*    >*!/*/}
+                {/*    /!*        Description*!/*/}
+                {/*    /!*    </button>*!/*/}
+                {/*    /!*</div>*!/*/}
+                {/*    /!*<div className="ms-4  mt-3">*!/*/}
+                {/*    /!*    <button*!/*/}
+                {/*    /!*        style={{*!/*/}
+                {/*    /!*            fontSize: "14px ",*!/*/}
+                {/*    /!*            fontWeight: "500",*!/*/}
+                {/*    /!*            color: "#01040D",*!/*/}
+                {/*    /!*            border: "1px solid #01040D",*!/*/}
+                {/*    /!*            padding: "7px 50px",*!/*/}
+                {/*    /!*            borderRadius: "12px",*!/*/}
+                {/*    /!*        }}*!/*/}
+                {/*    /!*    >*!/*/}
+                {/*    /!*        Reviews*!/*/}
+                {/*    /!*    </button>*!/*/}
+                {/*    /!*</div>*!/*/}
+                {/*</div>*/}
                 <div className="container">
                     <div>
                         <div
                             style={{fontSize: "22px", fontWeight: "700", color: "#01040D"}}
-                            className="mt-4"
                         >
                             Reviews
                         </div>
@@ -277,7 +289,7 @@ const ProductDetail = () => {
                                                     >
                                                         {review?.content}
                                                     </p>
-                                                    <div className="mt-3">img, img, img, img</div>
+                                                    {/*<div className="mt-3">img, img, img, img</div>*/}
                                                 </div>
                                             </div>
                                             <div>

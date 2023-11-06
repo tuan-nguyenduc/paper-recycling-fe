@@ -53,7 +53,7 @@ const Review = () => {
                 ...values,
                 productId: orderDetails?.at(selectedProduct)?.productId,
             });
-            await router.push(`/products/${orderDetails?.at(selectedProduct)?.productId}`)
+             await router.push(`/products/${orderDetails?.at(selectedProduct)?.productId}`)
         } catch (err) {
             throw new Error(err.message)
         } finally {

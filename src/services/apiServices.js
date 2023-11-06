@@ -69,5 +69,13 @@ const apiServices = {
         const url = '/reviews'
         return await axiosClient.post(url, body);
     },
+    getAllCampaigns: async (params = {}) => {
+        const url = '/posts';
+        return await axiosClient.get(url, { params });
+    },
+    getCampaignById: async (id) => {
+        const url = `/posts/${id}`;
+        return await axiosClient.get(url);
+    },
 }
 export default apiServices;

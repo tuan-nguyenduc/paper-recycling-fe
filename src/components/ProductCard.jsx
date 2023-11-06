@@ -9,11 +9,16 @@ const ProductCard = ({product}) => {
     const router = useRouter();
     return (
         <>
-            <div style={{boxShadow: "0px 4px 30px 0px #1B19561A", padding: "25px", borderRadius: 20, position: "relative"}}>
+            <div style={{
+                boxShadow: "0px 4px 30px 0px #1B19561A",
+                padding: "25px",
+                borderRadius: 20,
+                position: "relative"
+            }}>
                 <Link href={`/products/${product.id}`}>
                     <img
                         className="mt-3"
-                        style={{width: "100%", height: "70%", }}
+                        style={{width: "100%", height: "70%",}}
                         src={product.images.split(',')[0]}
                         alt={product.name}
                     />
@@ -26,7 +31,12 @@ const ProductCard = ({product}) => {
                             marginTop: "10px",
                         }}
                     >
-                        {product.name}
+
+                        <div>{product.name.length > 27
+                            ? product.name?.substring(0, 27) + '...'
+                            : product.name}
+                        </div>
+
                     </div>
                 </Link>
                 <div

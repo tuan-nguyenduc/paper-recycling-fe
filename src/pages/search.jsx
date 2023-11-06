@@ -148,24 +148,24 @@ const SearchProduct = () => {
                                     }}
                                 >
                                     <div className="box-title-sidebar">Filters</div>
-                                    <div
-                                        className="mt-3"
-                                        style={{
-                                            fontSize: "12px",
-                                            fontWeight: "600",
-                                            color: "#01221D",
-                                        }}
-                                    >
-                                        Color
-                                    </div>
-                                    <div className="d-flex justify-content-between mt-3">
-                                        <Circle/>
-                                        <Circle/>
-                                        <Circle/>
-                                        <Circle/>
-                                        <Circle/>
-                                        <Circle/>
-                                    </div>
+                                    {/*<div*/}
+                                    {/*    className="mt-3"*/}
+                                    {/*    style={{*/}
+                                    {/*        fontSize: "12px",*/}
+                                    {/*        fontWeight: "600",*/}
+                                    {/*        color: "#01221D",*/}
+                                    {/*    }}*/}
+                                    {/*>*/}
+                                    {/*    Color*/}
+                                    {/*</div>*/}
+                                    {/*<div className="d-flex justify-content-between mt-3">*/}
+                                    {/*    <Circle/>*/}
+                                    {/*    <Circle/>*/}
+                                    {/*    <Circle/>*/}
+                                    {/*    <Circle/>*/}
+                                    {/*    <Circle/>*/}
+                                    {/*    <Circle/>*/}
+                                    {/*</div>*/}
                                     <div
                                         className="mt-3"
                                         style={{
@@ -178,7 +178,7 @@ const SearchProduct = () => {
                                     </div>
                                     <div>
                                         <label htmlFor="customRange1" className="form-label">
-                                            Example range
+                                            Range
                                         </label>
                                         <input
                                             type="range"

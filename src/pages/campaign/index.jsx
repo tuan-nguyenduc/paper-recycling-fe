@@ -84,7 +84,7 @@ const Campaign = () => {
                                             expanded={false}
                                             truncatedEndingComponent={"... "}
                                         >
-                                            <span>{campaign?.description}</span>
+                                            <div>{campaign?.description}</div>
                                         </ShowMoreText>
                                         {/*<span className="postText">{campaign?.description}</span>*/}
                                         <CCarousel controls indicators>

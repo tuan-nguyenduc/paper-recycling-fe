@@ -11,7 +11,7 @@ import {formatPrice} from "@/utils";
 import moment from "moment";
 import {DEFAULT_AVATAR_IMG} from "@/constant/constant";
 import {CCarousel, CCarouselItem, CImage} from "@coreui/react";
-import ShowMoreText from "react-show-more-text";
+// import ShowMoreText from "react-show-more-text";
 
 const ProductDetail = () => {
     const router = useRouter();
@@ -145,16 +145,15 @@ const ProductDetail = () => {
                                 {formatPrice(product?.price)} PP
                             </div>
 
-                            <ShowMoreText
-                                /* Default options */
-                                className="postDesc"
-                                lines={3}
-                                more="Show more"
-                                less="Show less"
-                                anchorClass="show-more-less-clickable"
-                                expanded={false}
-                                truncatedEndingComponent={"... "}
-                            >
+                            {/*<ShowMoreText*/}
+                            {/*    className="postDesc"*/}
+                            {/*    lines={3}*/}
+                            {/*    more="Show more"*/}
+                            {/*    less="Show less"*/}
+                            {/*    anchorClass="show-more-less-clickable"*/}
+                            {/*    expanded={false}*/}
+                            {/*    truncatedEndingComponent={"... "}*/}
+                            {/*>*/}
                                 <p
                                     style={{
                                         fontSize: "16px",
@@ -164,7 +163,7 @@ const ProductDetail = () => {
                                 >
                                     {product?.description}
                                 </p>
-                            </ShowMoreText>
+                            {/*</ShowMoreText>*/}
                             {/*<div className="mt-3 d-flex">*/}
                             {/*    <h4>*/}
                             {/*        <b>Quantity In Stock:</b> {formatPrice(product?.quantity)}*/}

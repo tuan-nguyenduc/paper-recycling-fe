@@ -18,7 +18,7 @@ import ProfileModal from "@/components/ProfileModal";
 import {useState} from "react";
 import moment from "moment/moment";
 import {CCarousel, CCarouselItem, CImage} from "@coreui/react";
-import ShowMoreText from "react-show-more-text";
+//import ShowMoreText from "react-show-more-text";
 import Link from "next/link";
 import {useRouter} from "next/router";
 import FacebookComment from "@/components/FacebookComment";
@@ -67,19 +67,18 @@ const CampaignDetail = () => {
                     </div>
                 </div>
                 <div className="postCenter">
-                    <ShowMoreText
-                        /* Default options */
-                        className="postDesc"
-                        lines={3}
-                        more="Show more"
-                        less="Show less"
-                        anchorClass="show-more-less-clickable"
-                        expanded={false}
-                        truncatedEndingComponent={"... "}
-                    >
-                        <span>{campaign?.description}</span>
-                    </ShowMoreText>
-                    {/*<span className="postText">{campaign?.description}</span>*/}
+                    {/*<ShowMoreText*/}
+                    {/*    className="postDesc"*/}
+                    {/*    lines={3}*/}
+                    {/*    more="Show more"*/}
+                    {/*    less="Show less"*/}
+                    {/*    anchorClass="show-more-less-clickable"*/}
+                    {/*    expanded={false}*/}
+                    {/*    truncatedEndingComponent={"... "}*/}
+                    {/*>*/}
+                    {/*    <span>{campaign?.description}</span>*/}
+                    {/*</ShowMoreText>*/}
+                    <span className="postText">{campaign?.description}</span>
                     <CCarousel controls indicators>
                         {
                             campaign?.images?.split(',').map((image, index) => {

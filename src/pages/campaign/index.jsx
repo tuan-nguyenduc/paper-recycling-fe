@@ -18,7 +18,7 @@ import ProfileModal from "@/components/ProfileModal";
 import {useState} from "react";
 import moment from "moment/moment";
 import {CCarousel, CCarouselItem, CImage} from "@coreui/react";
-import ShowMoreText from "react-show-more-text";
+// import ShowMoreText from "react-show-more-text";
 import Link from "next/link";
 
 const Campaign = () => {
@@ -74,19 +74,18 @@ const Campaign = () => {
                                         </div>
                                     </div>
                                     <div className="postCenter">
-                                        <ShowMoreText
-                                            /* Default options */
-                                            className="postDesc"
-                                            lines={3}
-                                            more="Show more"
-                                            less="Show less"
-                                            anchorClass="show-more-less-clickable"
-                                            expanded={false}
-                                            truncatedEndingComponent={"... "}
-                                        >
-                                            <div>{campaign?.description}</div>
-                                        </ShowMoreText>
-                                        {/*<span className="postText">{campaign?.description}</span>*/}
+                                        {/*<ShowMoreText*/}
+                                        {/*    className="postDesc"*/}
+                                        {/*    lines={3}*/}
+                                        {/*    more="Show more"*/}
+                                        {/*    less="Show less"*/}
+                                        {/*    anchorClass="show-more-less-clickable"*/}
+                                        {/*    expanded={false}*/}
+                                        {/*    truncatedEndingComponent={"... "}*/}
+                                        {/*>*/}
+                                        {/*    <div>{campaign?.description}</div>*/}
+                                        {/*</ShowMoreText>*/}
+                                        <span className="postText">{campaign?.description}</span>
                                         <CCarousel controls indicators>
                                             {
                                                 campaign?.images?.split(',').map((image, index) => {

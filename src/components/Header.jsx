@@ -10,6 +10,7 @@ import {SearchOutlined, UserOutlined} from "@ant-design/icons";
 import apiServices from "@/services/apiServices";
 import Link from "next/link";
 import {TbLogout} from "react-icons/tb";
+import {IoReceiptOutline} from "react-icons/io5";
 // const handleMenuClick = (e) => {
 //   message.info("Click on menu item.");
 //   console.log("click", e);
@@ -178,9 +179,9 @@ const Header = () => {
                             <></>
                         )}
 
-                        <div className="logo_page w-30">
+                        <button className="logo_page mr-32" onClick={() => router.push('/')}>
                             <SvgHeaderSignIn/>
-                        </div>
+                        </button>
                         <div className="search_header w-40">
                             <Dropdown
                                 menu={{
@@ -225,6 +226,14 @@ const Header = () => {
                                     <button onClick={() => router.push("/cart")}>
                     <CartButton/>
                   </button>
+
+                </span>
+                                <span style={{margin: "0px 0px", cursor: "pointer", fontSize: '24px', color: "white"}}>
+                  {" "}
+                                    <button onClick={() => router.push("/order")}>
+                    <IoReceiptOutline />
+                  </button>
+
                 </span>
                             </div>
                             <div>

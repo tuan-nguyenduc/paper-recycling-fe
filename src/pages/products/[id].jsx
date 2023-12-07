@@ -247,7 +247,7 @@ const ProductDetail = () => {
                             Reviews
                         </div>
                         <div className="row">
-                            {allReviews?.map((review) => {
+                            {allReviews.length !== 0 ? allReviews?.map((review) => {
                                 return (
                                     <div className="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" key={review?.id}>
                                         <div
@@ -309,7 +309,7 @@ const ProductDetail = () => {
                                         </div>
                                     </div>
                                 )
-                            })}
+                            }) : <div>No one reviewed this product before</div>}
 
                         </div>
                         <p

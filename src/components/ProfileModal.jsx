@@ -67,40 +67,40 @@ const ProfileModal = ({ open, setOpen }) => {
             {user.name}
           </div>
           <div className="tabs">
-            <ul className="tabsPage">
-              <li
-                  className={activeTabs === 1 ? "active" : ""}
-                  onClick={() => {
-                    handleTabClick(1);
-                  }}
-              >
-                Personal Info
-              </li>
-              <li
-                  className={activeTabs === 2 ? "active" : ""}
-                  onClick={() => {
-                    handleTabClick(2);
-                  }}
-              >
-                Favourite
-              </li>
-              <li
-                  className={activeTabs === 3 ? "active" : ""}
-                  onClick={() => {
-                    handleTabClick(3);
-                  }}
-              >
-                My Reviews
-              </li>
-              <li
-                  className={activeTabs === 4 ? "active" : ""}
-                  onClick={() => {
-                    handleTabClick(4);
-                  }}
-              >
-                Settings
-              </li>
-            </ul>
+            {/*<ul className="tabsPage">*/}
+            {/*  <li*/}
+            {/*      className={activeTabs === 1 ? "active" : ""}*/}
+            {/*      onClick={() => {*/}
+            {/*        handleTabClick(1);*/}
+            {/*      }}*/}
+            {/*  >*/}
+            {/*    Personal Info*/}
+            {/*  </li>*/}
+            {/*  <li*/}
+            {/*      className={activeTabs === 2 ? "active" : ""}*/}
+            {/*      onClick={() => {*/}
+            {/*        handleTabClick(2);*/}
+            {/*      }}*/}
+            {/*  >*/}
+            {/*    Favourite*/}
+            {/*  </li>*/}
+            {/*  <li*/}
+            {/*      className={activeTabs === 3 ? "active" : ""}*/}
+            {/*      onClick={() => {*/}
+            {/*        handleTabClick(3);*/}
+            {/*      }}*/}
+            {/*  >*/}
+            {/*    My Reviews*/}
+            {/*  </li>*/}
+            {/*  <li*/}
+            {/*      className={activeTabs === 4 ? "active" : ""}*/}
+            {/*      onClick={() => {*/}
+            {/*        handleTabClick(4);*/}
+            {/*      }}*/}
+            {/*  >*/}
+            {/*    Settings*/}
+            {/*  </li>*/}
+            {/*</ul>*/}
             <div className="tab_content">
               {activeTabs === 1 && (
                   <div className="tab_panel">
@@ -224,8 +224,8 @@ const ProfileModal = ({ open, setOpen }) => {
                     </div>
                   </div>
               )}
-              {activeTabs === 2 && <div className="tab_panel">a1212</div>}
-              {activeTabs === 3 && <div className="tab_panel">a3432</div>}
+              {/*{activeTabs === 2 && <div className="tab_panel">a1212</div>}*/}
+              {/*{activeTabs === 3 && <div className="tab_panel">a3432</div>}*/}
               {activeTabs === 4 && (
                   <div className="tab_panel">
                     <div className="row">

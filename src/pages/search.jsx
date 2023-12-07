@@ -212,51 +212,51 @@ const SearchProduct = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="pt-5">
-                                    <div className="box-title-sidebar">Rating</div>
-                                    <button
-                                        className="mt-4"
-                                        style={{
-                                            border: "1px solid #01040D",
-                                            width: "100%",
-                                            padding: "10px",
-                                            borderRadius: "16px",
-                                        }}
-                                    >
-                                        <Start/>
-                                    </button>
-                                </div>
-                                <div>
-                                    <button
-                                        className="mt-5"
-                                        style={{
-                                            background: "#01040D",
-                                            width: "100%",
-                                            borderRadius: "16px",
-                                            padding: "20px",
-                                            fontSize: "15px",
-                                            fontWeight: "700",
-                                            color: "#fff",
-                                        }}
-                                    >
-                                        Apply
-                                    </button>
-                                    <button
-                                        className="mt-5 mb-5"
-                                        style={{
-                                            background: "#fff",
-                                            width: "100%",
-                                            borderRadius: "16px",
-                                            padding: "20px",
-                                            fontSize: "15px",
-                                            fontWeight: "700",
-                                            color: "#01040D",
-                                            border: "1px solid #01040D",
-                                        }}
-                                    >
-                                        Clear
-                                    </button>
-                                </div>
+                                {/*<div className="pt-5">*/}
+                                {/*    <div className="box-title-sidebar">Rating</div>*/}
+                                {/*    <button*/}
+                                {/*        className="mt-4"*/}
+                                {/*        style={{*/}
+                                {/*            border: "1px solid #01040D",*/}
+                                {/*            width: "100%",*/}
+                                {/*            padding: "10px",*/}
+                                {/*            borderRadius: "16px",*/}
+                                {/*        }}*/}
+                                {/*    >*/}
+                                {/*        <Start/>*/}
+                                {/*    </button>*/}
+                                {/*</div>*/}
+                                {/*<div>*/}
+                                {/*    <button*/}
+                                {/*        className="mt-5"*/}
+                                {/*        style={{*/}
+                                {/*            background: "#01040D",*/}
+                                {/*            width: "100%",*/}
+                                {/*            borderRadius: "16px",*/}
+                                {/*            padding: "20px",*/}
+                                {/*            fontSize: "15px",*/}
+                                {/*            fontWeight: "700",*/}
+                                {/*            color: "#fff",*/}
+                                {/*        }}*/}
+                                {/*    >*/}
+                                {/*        Apply*/}
+                                {/*    </button>*/}
+                                {/*    <button*/}
+                                {/*        className="mt-5 mb-5"*/}
+                                {/*        style={{*/}
+                                {/*            background: "#fff",*/}
+                                {/*            width: "100%",*/}
+                                {/*            borderRadius: "16px",*/}
+                                {/*            padding: "20px",*/}
+                                {/*            fontSize: "15px",*/}
+                                {/*            fontWeight: "700",*/}
+                                {/*            color: "#01040D",*/}
+                                {/*            border: "1px solid #01040D",*/}
+                                {/*        }}*/}
+                                {/*    >*/}
+                                {/*        Clear*/}
+                                {/*    </button>*/}
+                                {/*</div>*/}
                             </div>
                         </div>
                         <div className="col-xl-9 col-lg-4 col-md-6 col-sm-6 col-6 mt-2">

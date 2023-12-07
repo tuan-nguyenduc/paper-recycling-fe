@@ -11,6 +11,7 @@ import {formatPrice} from "@/utils";
 import moment from "moment";
 import {DEFAULT_AVATAR_IMG} from "@/constant/constant";
 import {CCarousel, CCarouselItem, CImage} from "@coreui/react";
+import header from "@/components/Header";
 // import ShowMoreText from "react-show-more-text";
 
 const ProductDetail = () => {
@@ -94,8 +95,10 @@ const ProductDetail = () => {
                                             return (
                                                 <CCarouselItem key={index}>
                                                     <div style={contentStyle}>
-                                                        <CImage style={{width: "100%", height: "100%"}} src={image}
-                                                                alt="slide 1"/>
+                                                        <CImage
+                                                            src={image}
+                                                            style={{width: "100%", height: "100%"}}
+                                                            alt="slide 1"/>
                                                     </div>
                                                 </CCarouselItem>
                                             )

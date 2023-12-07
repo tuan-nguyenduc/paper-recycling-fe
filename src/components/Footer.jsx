@@ -12,14 +12,14 @@ const Footer = () => {
             <nav>
               <ul className="row">
                 <li className="col-xl-3 col-lg-4 col-md-5 col-sm-6 col-6">
-                  <strong>Company</strong>
+                  <strong>School</strong>
                   <ul style={{ padding: "30px 0px" }}>
                     <li style={{ marginTop: "15px" }}>About us</li>
                     <li style={{ marginTop: "15px" }}>Press</li>
                   </ul>
                 </li>
                 <li className="col-xl-3 col-lg-4 col-md-5 col-sm-6 col-6">
-                  <strong>Support</strong>
+                  <strong>Policy</strong>
                   <ul style={{ padding: "30px 0px" }}>
                     <li style={{ marginTop: "15px" }}>Privacy Policy</li>
                     <li style={{ marginTop: "15px" }}>Terms & Conditons</li>
@@ -28,15 +28,15 @@ const Footer = () => {
                 <li className="col-xl-3 col-lg-4 col-md-5 col-sm-6 col-6">
                   <strong>Support</strong>
                   <ul style={{ padding: "30px 0px" }}>
-                    <li style={{ marginTop: "15px" }}>Privacy Policy</li>
-                    <li style={{ marginTop: "15px" }}>Terms & Conditons</li>
+                    <li style={{ marginTop: "15px" }}>Hotline</li>
+                    <li style={{ marginTop: "15px" }}>Email</li>
                   </ul>
                 </li>
                 <li className="col-xl-3 col-lg-4 col-md-5 col-sm-6 col-6">
-                  <strong>Support</strong>
+                  <strong>Help & FAQs</strong>
                   <ul style={{ padding: "30px 0px" }}>
-                    <li style={{ marginTop: "15px" }}>Privacy Policy</li>
-                    <li style={{ marginTop: "15px" }}>Terms & Conditons</li>
+                    <li style={{ marginTop: "15px" }}>Shipping & Billing</li>
+                    <li style={{ marginTop: "15px" }}>FAQs</li>
                   </ul>
                 </li>
               </ul>

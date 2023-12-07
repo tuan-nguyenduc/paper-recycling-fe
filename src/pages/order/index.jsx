@@ -174,7 +174,7 @@ const Order = () => {
                                 return (
                                     <section className="productOrder size_container_elm" key={order.id}>
                                         <div className="d-flex justify-content-between align-items-center">
-                                            <div className="title_elm">Shop Name</div>
+                                            <div className="title_elm"></div>
                                             <div>
                                                 <button
                                                     style={{
